@@ -81,7 +81,7 @@ class Dev_docs_mcp {
 		// If false (or empty), set our default location
 		if ( ! $filepath)
 		{
-			$filepath = APPPATH . 'third_party/dev_docs/views/sample_docs.textile');
+			$filepath = APPPATH . 'third_party/dev_docs/views/sample_docs.textile';
 		}
 		
 		if ( ! file_exists($filepath))
