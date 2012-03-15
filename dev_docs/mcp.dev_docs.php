@@ -75,8 +75,14 @@ class Dev_docs_mcp {
 		// Grab our developer documentation. Expects a textile formatted document
 		// but will technically read any real file.
 		
-		// check if filepath has been set via config.php; else use default
-		$filepath = $this->_EE->config->item('dev_docs_filepath', APPPATH . 'third_party/dev_docs/views/sample_docs.textile');
+		// Try and fetch filepath from EE's config
+		$filepath = $this->_EE->config->item('dev_docs_filepath');
+		
+		// If false (or empty), set our default location
+		if ( ! $filepath)
+		{
+			$filepath = APPPATH . 'third_party/dev_docs/views/sample_docs.textile');
+		}
 		
 		if ( ! file_exists($filepath))
 		{
